@@ -54,6 +54,8 @@ public class Main {
             System.out.println("Currency code (3): " + currencyCode);
             System.out.println(next);
         }
+        Notification notification = new Notification();
+        notification.WriteNotificationXml("test");
         scanner.close();
     }
 }
