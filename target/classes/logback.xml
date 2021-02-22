@@ -1,12 +1,12 @@
 <configuration>
-    <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
+    <timestamp key="byDate" datePattern="yyMMdd"/>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
         </layout>
     </appender>
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>logfile-.%d{yyyy-MM-dd}.log</file>
+        <file>trn2msg_${byDate}.log</file>
         <append>true</append>
         <encoder>
             <Pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</Pattern>
