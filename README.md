@@ -7,5 +7,5 @@ If transaction file is empty - program will use default file.txt in the same dir
 
 To compile program:
 ```sh
-mvn clean compile assembly:single
+mvn clean install jar:jar
 ```
