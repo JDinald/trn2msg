@@ -21,7 +21,8 @@ public class Notification {
 
   NotificationUtils notificationUtils = new NotificationUtils();
 
-  public void WriteNotificationXml(List<Transaction> transactionList, String convertedTransaction) {
+  public void WriteNotificationXml(
+      List<Transaction> transactionList, String convertedTransaction, boolean outputFlag) {
 
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
     LocalDateTime now = LocalDateTime.now();
@@ -84,7 +85,12 @@ public class Notification {
       TransformerFactory transformerFactory = TransformerFactory.newInstance();
       Transformer transformer = transformerFactory.newTransformer();
       DOMSource source = new DOMSource(document);
-      StreamResult result = new StreamResult(new File("file.xml"));
+      StreamResult result = new StreamResult();
+      if (!outputFlag) {
+        result = new StreamResult(new File(convertedTransaction));
+      } else {
+        result = new StreamResult(System.out);
+      }
 
       transformer.transform(source, result);
 

@@ -19,6 +19,8 @@ public class Main {
 
     List<String> commandList = new ArrayList<>();
 
+    boolean outputFlag = false;
+
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyMMdd");
     LocalDateTime now = LocalDateTime.now();
 
@@ -36,8 +38,9 @@ public class Main {
       }
       fileToConvert = commandList.get(0);
 
-      if (commandList.get(1) == null) {
+      if (commandList.size() == 1) {
         logger.info("No converted file name");
+        outputFlag = true;
       } else {
         convertedFile = commandList.get(1);
       }
@@ -59,7 +62,7 @@ public class Main {
       transactionList.add(transaction);
     }
     Notification notification = new Notification();
-    notification.WriteNotificationXml(transactionList, convertedFile);
+    notification.WriteNotificationXml(transactionList, convertedFile, outputFlag);
     scanner.close();
 
     logger.info("End of file conversion");
