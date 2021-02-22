@@ -1,1 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><root><msg-list><msg>Purchase with card 966796******6093 on 11.11.2018 14:34, amount 45.99  usd.Withdrawal with card 8237******105879 on 11.12.2018 09:56, amount 10.00 eur.</msg></msg-list></root>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <msg-list>
+        <msg>Purchase with card 966796******6093 on 11.11.2018 14:34:45, amount 45.99 usd.</msg>
+        <msg>Withdrawal with card 823725******5879 on 12.11.2018 09:56:12, amount 10.00 eur.</msg>
+    </msg-list>
+    <totals>cnt="2" sum="5599" date="2021.02.22 02:07:27"</totals>
+</root>

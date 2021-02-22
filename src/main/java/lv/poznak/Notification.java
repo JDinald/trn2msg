@@ -1,3 +1,5 @@
+package lv.poznak;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -10,6 +12,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.IOException;
 import java.sql.Time;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -25,7 +28,22 @@ public class Notification {
   public void WriteNotificationXml(List<Transaction> transactionList) {
 
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
+    DateTimeFormatter dtfForLog = DateTimeFormatter.ofPattern("yyMMdd");
     LocalDateTime now = LocalDateTime.now();
+
+//    try {
+//      File logFile = new File("trn2msg_" + dtfForLog.format(now)+ ".log");
+//      if (logFile.createNewFile()) {
+//        System.out.println("File created: " + logFile.getName());
+//      } else {
+//        System.out.println("File already exists.");
+//      }
+//    } catch (IOException e) {
+//      System.out.println("An error occurred.");
+//      e.printStackTrace();
+//    }
+
+
 
     try {
       DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -80,7 +98,8 @@ public class Notification {
       TransformerFactory transformerFactory = TransformerFactory.newInstance();
       Transformer transformer = transformerFactory.newTransformer();
       DOMSource source = new DOMSource(document);
-      StreamResult result = new StreamResult(new File("src/file.xml"));
+      //TODO file.xml
+      StreamResult result = new StreamResult(new File("file.xml"));
 
       transformer.transform(source, result);
 

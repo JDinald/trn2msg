@@ -1,3 +1,5 @@
+package lv.poznak;
+
 public class Transaction {
 
   private String transactionType;

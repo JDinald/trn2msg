@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="trn2msg:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/trn2msg_jar</output-path>
+    <root id="archive" name="trn2msg.jar">
+      <element id="module-output" name="trn2msg" />
+    </root>
+  </artifact>
+</component>
